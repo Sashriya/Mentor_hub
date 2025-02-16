@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register-Profile</title>
+    <link rel="stylesheet" href="stylez.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">Tutor Recruit</div>
+        <ul class="nav-links">
+            <li><a href="index1.html">🏠Home</a></li>
+            <li><a href="about.html">🤝🏻About Us</a></li>
+            <li><a href="profile.html">👤Profile</a></li>
+        </ul>
+    </nav>
+
+
+    <div class="container">
+        <h2>Gallery of Teaching Moments</h2>
+        <div class="photo-container" id="photoGallery"></div>
+        <a href="main.html" class="upload-more">Upload More Photos</a>
+    </div>
+
+    <script>
+        function loadGallery() {
+            let photos = JSON.parse(localStorage.getItem('photos')) || [];
+            const gallery = document.getElementById('photoGallery');
+
+            if (photos.length === 0) {
+                gallery.innerHTML = "<p>No images uploaded yet.</p>";
+                return;
+            }
+
+            gallery.innerHTML = "";
+            photos.forEach(photo => {
+                const photoBox = document.createElement('div');
+                photoBox.classList.add('photo-box');
+                photoBox.innerHTML = `
+                    <img src="${photo.image}" alt="Uploaded Photo">
+                    <p>${photo.description}</p>
+                `;
+                gallery.appendChild(photoBox);
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', loadGallery);
+        
+    </script>
+
+
+</body>
+</html>
