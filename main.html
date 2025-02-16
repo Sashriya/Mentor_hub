@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Teaching Moments</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+
+    <nav class="navbar">
+        <div class="logo">Mentor Hub</div>
+        <ul class="nav-links">
+            <li><a href="index1.html">🏠Home</a></li>
+            <li><a href="about.html">🤝🏻About Us</a></li>
+            <li><a href="profile.html">👤Profile</a></li>
+        </ul>
+    </nav>
+
+
+
+    <div class="container">
+        <h2>Upload Teaching Moments</h2>
+        <div class="upload-section">
+            <input type="file" id="photoUpload" accept="image/*">
+            <img id="previewImage" class="photo-preview" alt="Photo Preview">
+            <textarea id="photoDescription" class="description" placeholder="Enter description..."></textarea>
+            <center><button class="submit-btn" onclick="savePhoto()">Upload</button></center>
+        </div>
+        <center><a href="gallery.html" class="view-gallery">View Gallery</a></center>
+    </div>
+
+    <script>
+        function savePhoto() {
+            const fileInput = document.getElementById('photoUpload');
+            const description = document.getElementById('photoDescription').value;
+
+            if (fileInput.files.length === 0) {
+                alert('Please select a photo to upload.');
+                return;
+            }
+
+            const file = fileInput.files[0];
+            const reader = new FileReader();
+
+            reader.onload = function(event) {
+                let photos = JSON.parse(localStorage.getItem('photos')) || [];
+                photos.push({ image: event.target.result, description: description });
+
+                localStorage.setItem('photos', JSON.stringify(photos));
+
+                alert("Photo uploaded successfully!");
+                fileInput.value = "";
+                document.getElementById('photoDescription').value = "";
+                document.getElementById('previewImage').style.display = "none";
+            };
+            reader.readAsDataURL(file);
+        }
+
+        document.getElementById('photoUpload').addEventListener('change', function(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const preview = document.getElementById('previewImage');
+                    preview.src = e.target.result;
+                    preview.style.display = "block";
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+    </script>
+</body>
+</html>
