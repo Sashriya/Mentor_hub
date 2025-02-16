@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Free education and awareness class for kindergardens">
+    <meta name="og:type" content="article">
+    <meta name="og:locale" content="en_US">
+    <meta name="og:title" content="tutors recrition">
+    <meta name="og:description" content="Free education and awareness class for kindergardens">
+    <meta name="og:site_name" content="Tutor Recruit">
+    <title>Mentor hub</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="MHlogo.png">
+</head>
+<body>
+
+    <nav class="navbar">
+        <img src="MHlogo.png" alt="logo" align="left"><br>
+        <div class="logo" align="center">Mentor Hub</div>
+        <ul class="nav-links">
+            <li><a href="index1.html">🏠Home</a></li>
+            <li><a href="about.html">🤝🏻About Us</a></li>
+            <li><a href="#">📱Get Contact</a>
+                <ul class="dropdown">
+                    <li><a href="#">9467383389</a></li>
+                    <li><a href="#">9565363588</a></li>
+                </ul>
+            </li>
+            <li><a href="gallery.html">🖼️Gallery</a></li>
+        </ul>
+    </nav>
+
+
+
+
+    <div class="register-container">
+        <h2>Register</h2>
+    
+        <a href="main.html"><button class="btn-signin">Sign In</button></a>
+    
+        <button class="btn-register" onclick="registerUser()">Register</button>
+    
+        <select id="dropdown" onchange="navigateToPage()">
+            <option value="">Select an option</option>
+            <option value="student_registration.html">As Student</option>
+            <option value="tutor_registration.html">As Tutor</option>
+        </select>
+    </div>
+
+
+
+    <script src="script.js"></script>
+</body>
+</html>
