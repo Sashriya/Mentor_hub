@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Free education and awareness class for kindergardens">
+    <meta name="og:type" content="article">
+    <meta name="og:locale" content="en_US">
+    <meta name="og:title" content="tutors recrition">
+    <meta name="og:description" content="Free education and awareness class for kindergardens">
+    <meta name="og:site_name" content="Tutor Recruit">
+    <title>Mentor hub</title>
+    <link rel="icon" href="MHlogo.png">
+</head>
+<style>
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url(tutor.webp);
+    background-size: cover;
+}
+
+img{
+    height: 50px;
+    width: 50px;
+    gap: 0;
+    padding: 0;
+    border: 3px solid white;
+}
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 15px;
+    display: flex;
+    align-items: left; 
+    gap: 50px; 
+    padding: 10px;
+}
+
+.navbar img {
+    height: 50px; 
+    width: 50px;
+    padding: 4px;
+    padding-right: -410px;
+}
+
+
+.logo {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    align-items: left;
+    padding-left: -100px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li {
+    position: relative;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+}
+
+.nav-links a:hover {
+    color: #ffcc00;
+    font-size: 18px;
+    transition: .7s;
+}
+
+/* Dropdown styling for Get Contact */
+.dropdown {
+    display: none;
+    position: absolute;
+    top: 30px;
+    left: 0;
+    background-color: white;
+    list-style: none;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+.nav-links li:hover .dropdown {
+    display: block;
+}
+
+.dropdown li {
+    padding: 1px;
+}
+
+.dropdown li:hover{
+    transition: .15s;
+}
+
+.dropdown a {
+    color: black;
+}
+
+.about-section {
+    text-align: center;
+    padding: 50px;
+    background: white;
+    margin: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Style for the modal */
+.modal {
+    background: white; /* Ensure the modal has a solid background */
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000; /* Ensure it appears above other elements */
+}
+
+/* Add an overlay to blur or darken the background */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Dark overlay to highlight modal */
+    z-index: 999;
+}
+
+/* Fix the About Us section text color */
+.about-section {
+    position: relative;
+    z-index: 1; /* Ensure it does not overlap the modal */
+    text-align: center;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.9); /* Slightly transparent background */
+    border-radius: 10px;
+}
+
+/* Improve button styling */
+button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border: none;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 10px 0;
+    border-radius: 5px;
+}
+
+button.sign-in {
+    background: green;
+    color: white;
+}
+
+button.register {
+    background: blue;
+    color: white;
+}
+
+/* Dropdown styling */
+select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+
+
+/* Center the register box with a glass effect */
+/* Center the register container */
+.register-container {
+    width: 400px;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+
+    /* Centering the box */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+/* Styling the buttons */
+.btn {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    margin: 10px 0;
+    color: white;
+    font-weight: bold;
+}
+
+.btn-signin {
+    background-color: #28a745; /* Green */
+}
+
+.btn-register {
+    background-color: #007bff; /* Blue */
+}
+
+/* Fix the dropdown position - Initially Hidden */
+.dropdown {
+    display: none; /* Hidden by default */
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-top: 10px; /* Space between button and dropdown */
+}
+
+/* Flexbox to align button and dropdown properly */
+.register-btn-container {
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center;
+}
+
+.register-container {
+    text-align: center;
+    margin-top: 50px;
+}
+button {
+    display: block;
+    width: 400px;
+    margin: 10px auto;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+}
+.btn-signin {
+    background-color: green;
+    color: white;
+}
+.btn-register {
+    background-color: blue;
+    color: white;
+}
+select {
+    width: 400px;
+    padding: 10px;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+select option{
+    font-size: 16px;
+    border: #333;
+}
+</style>
+<body>
+
+    <nav class="navbar">
+        <img src="MHlogo.png" alt="logo" align="left"><br>
+        <div class="logo" align="center">Mentor Hub</div>
+        <ul class="nav-links">
+            <li><a href="index1.html">🏠Home</a></li>
+            <li><a href="about.html">🤝🏻About</a></li>
+            <li><a href="#">📱Get Contact</a>
+                <ul class="dropdown">
+                    <li><a href="#">9467383389</a></li>
+                    <li><a href="#">9565363588</a></li>
+                </ul>
+            </li>
+            <li><a href="gallery.html">🖼️Gallery</a></li>
+        </ul>
+    </nav>
+
+
+
+
+    <div class="register-container">
+        <h2>Register</h2>
+    
+        <a href="main.html"><button class="btn-signin">Sign In</button></a>
+    
+        <button class="btn-register" onclick="registerUser()">Register</button>
+    
+        <select id="dropdown" onchange="navigateToPage()">
+            <option value="">Select an option</option>
+            <option value="student_registration.html">As Student</option>
+            <option value="tutor_registration.html">As Tutor</option>
+        </select>
+    </div>
+
+
+
+    <script src="script.js"></script>
+</body>
+</html>

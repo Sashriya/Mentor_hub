@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile | Tutor Recruit</title>
+    <link rel="stylesheet" href="profile.css">
+</head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background: url(back.webp) no-repeat center center fixed;
+        background-size: cover;
+        margin: 0;
+        padding: 0;
+    }
+    
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #333;
+        padding: 15px;
+        display: flex;
+        align-items: left; 
+        gap: 50px; 
+        padding: 10px;
+    }
+    
+    .navbar img {
+        height: 50px; 
+        width: 50px;
+        padding: 4px;
+        padding-right: -410px;
+    }
+    
+    
+    .logo {
+        color: white;
+        font-size: 24px;
+        font-weight: bold;
+        align-items: left;
+        padding-left: -100px;
+    }
+    
+    .nav-links {
+        list-style: none;
+        display: flex;
+        gap: 20px;
+    }
+    
+    .nav-links li {
+        position: relative;
+    }
+    
+    .nav-links a {
+        text-decoration: none;
+        color: white;
+        font-size: 16px;
+    }
+    
+    .nav-links a:hover {
+        color: #ffcc00;
+        font-size: 18px;
+        transition: .7s;
+    }
+
+    .dropdown li {
+        padding: 1px;
+    }
+    
+    .dropdown li:hover{
+        transition: .15s;
+    }
+    
+    .dropdown a {
+        color: black;
+    }
+    
+    /* Dropdown styling for Get Contact */
+    .dropdown {
+        display: none;
+        position: absolute;
+        top: 30px;
+        left: 0;
+        background-color: white;
+        list-style: none;
+        padding: 10px;
+        border: 1px solid #ccc;
+    }
+    
+    .nav-links li:hover .dropdown {
+        display: block;
+    }
+    .container {
+        max-width: 400px;
+        background: rgba(255, 255, 255, 0.8);
+        padding: 20px;
+        margin: 50px auto;
+        border-radius: 8px;
+        box-shadow: 0px 0px 10px 0px #000;
+    }
+    
+    h2 {
+        text-align: center;
+    }
+    
+    label {
+        font-weight: bold;
+        display: block;
+        margin-top: 10px;
+    }
+    
+    input, textarea, select {
+        width: 96%;
+        padding: 8px;
+        margin-top: 5px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+    
+    button {
+        width: 100%;
+        background: #007bff;
+        color: white;
+        border: none;
+        padding: 10px;
+        margin-top: 15px;
+        cursor: pointer;
+    }
+    
+    button:hover {
+        background: #0056b3;
+    }
+    
+</style>
+<body>
+
+    <nav class="navbar">
+        <img src="MHlogo.png" alt="logo" align="left"><br>
+        <div class="logo" align="center">Mentor Hub</div>
+        <ul class="nav-links">
+            <li><a href="index1.html">🏠Home</a></li>
+            <li><a href="about.html">🤝🏻About</a></li>
+            <li><a href="#">📱Get Contact</a>
+                <ul class="dropdown">
+                    <li><a href="#">9467383389</a></li>
+                    <li><a href="#">9565363588</a></li>
+                </ul>
+            </li>
+            <li><a href="gallery.html">🖼️Gallery</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h2>Your Profile</h2>
+        <form id="profileForm">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" readonly>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" readonly>
+
+            <label for="date">DOB</label>
+            <input type="date" id="date" name="date" readonly>
+
+            <label for="gender">Gender</label>
+            <input type="text" id="gender" name="gender" readonly>
+
+            <label for="address">Address</label>
+            <textarea id="address" name="address" rows="4" readonly></textarea>
+
+            <label for="qualification">Qualification</label>
+            <input type="text" id="qualification" name="qualification" readonly>
+
+            <label for="role">Subject</label>
+            <input type="text" id="role" name="role" readonly>
+
+            <label for="willing">Willing to Teach Awareness Classes</label>
+            <input type="text" id="willing" name="willing" readonly>
+
+            <label for="teaching">Teaching Mode</label>
+            <input type="text" id="teaching" name="teaching" readonly>
+
+            <button type="button" id="editBtn">Edit</button>
+            <button type="submit" id="saveBtn" disabled>Save</button>
+        </form>
+    </div>
+
+    <script src="profile.js"></script>
+</body>
+</html>
